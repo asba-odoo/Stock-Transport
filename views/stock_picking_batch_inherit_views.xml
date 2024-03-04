@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_stock_picking_batch_inherite_form" model="ir.ui.view">
+            <field name="name">stock.picking.batch.inherit.view.form</field>
+            <field name="model">stock.picking.batch</field>
+            <field name="inherit_id" ref="stock_picking_batch.stock_picking_batch_form" />
+            <field name="arch" type="xml">
+
+                    <xpath expr="//form/sheet/group/group/field[@name='scheduled_date']" position="after">
+                        <field name="dock_id" />
+                        <field name="vehical_id" placeholder="e.g. Third Party Provider"/>
+                        <field name="vehical_category_id" placeholder="e.g. Semi-truck"/>
+                        <field name="weight" widget="progressbar" invisible="not vehical_category_id" />
+                        <field name="volume" widget="progressbar" invisible="not vehical_category_id"/>
+                    </xpath>
+            </field>
+    </record>
+
+    <record id="stock_picking_batch_graph" model="ir.ui.view">
+            <field name="name">stock.picking.batch.graph</field>
+            <field name="model">stock.picking.batch</field>
+            <field name="arch" type="xml">
+                <graph string="Batches" sample="1">
+                    <field name="vehical_id" type="col"/>
+                    <field name="scheduled_date" type="row"/>
+                </graph>
+            </field>
+    </record>
+
+
+
+    <record id="stock_picking_batch.stock_picking_batch_action" model="ir.actions.act_window">
+        <field name="name">Batch Transfers</field>
+        <field name="res_model">stock.picking.batch</field>
+        <field name="view_mode">tree,kanban,form,graph</field>
+    </record>
+
+
+
+    
+
+
+</odoo>
