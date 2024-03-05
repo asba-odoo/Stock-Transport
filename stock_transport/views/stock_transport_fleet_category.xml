@@ -9,6 +9,7 @@
                     <xpath expr="//form/sheet/group/group/field[@name='name']" position="after">
                         <field name="max_weight"/>
                         <field name="max_volume"/>
+                        
                     </xpath>
             </field>
     </record>

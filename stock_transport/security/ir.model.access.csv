@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_fleet_vehicle_model_category,access_fleet_vehicle_model_category,model_fleet_vehicle_model_category,base.group_user,1,1,1,1
 access_stock_picking_batch,access_stock_picking_batch,model_stock_picking_batch,base.group_user,1,1,1,1
+access_dock_model,access_dock_model,model_dock_model,base.group_user,1,1,1,1

@@ -21,10 +21,28 @@
             <field name="model">stock.picking.batch</field>
             <field name="arch" type="xml">
                 <graph string="Batches" sample="1">
-                    <field name="vehical_id" type="col"/>
+                    <field name="vehical_category_id" type="col"/>
                     <field name="scheduled_date" type="row"/>
+                    <field name="count_val" type="measure" />
                 </graph>
             </field>
+    </record>
+
+
+    <record id="stock_picking_batch_gantt_view" model="ir.ui.view">
+        <field name="name">stock.picking.batch.gantt</field>
+        <field name="model">stock.picking.batch</field>
+        <field name="arch" type="xml">
+                <gantt
+                    date_start="scheduled_date"
+                    date_stop="scheduled_date"
+                    default_group_by="vehical_id,dock_id"
+                    default_scale="week"
+                    scales="day,week"
+                    color="dock_id">
+                <field name="weight"/>
+            </gantt>
+        </field>
     </record>
 
 
@@ -32,12 +50,7 @@
     <record id="stock_picking_batch.stock_picking_batch_action" model="ir.actions.act_window">
         <field name="name">Batch Transfers</field>
         <field name="res_model">stock.picking.batch</field>
-        <field name="view_mode">tree,kanban,form,graph</field>
+        <field name="view_mode">tree,kanban,form,graph,gantt</field>
     </record>
-
-
-
-    
-
 
 </odoo>

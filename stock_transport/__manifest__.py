@@ -13,6 +13,7 @@
     'data' : [
         'security/ir.model.access.csv',
         'views/stock_transport_fleet_category.xml',
-        'views/stock_picking_batch_inherit_views.xml'
+        'views/stock_picking_batch_inherit_views.xml',
+        'views/stock_transport_views.xml'
     ]
 }
