@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-
     <record id="dock_stock_view_form" model="ir.ui.view">
         <field name="name">dock.model.view.form</field>
         <field name="model">dock.model</field>
@@ -17,7 +16,6 @@
             </form>
         </field>
     </record>
-
   
     <record id="action_add_dock" model="ir.actions.act_window">
         <field name="name">Dock</field>
@@ -29,7 +27,6 @@
             </p> 
         </field>
     </record>
-
    
     <menuitem id="dock_menu" name="Stock Transport" />
     <menuitem id="add_dock_menu" name="Dock" action="action_add_dock" parent="dock_menu"/>
